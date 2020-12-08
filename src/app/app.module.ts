@@ -1,16 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { AppExtraMileComponent } from './appExtraMile.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, AppExtraMileComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppExtraMileComponent],
 })
-export class AppModule { }
+export class AppModule {}

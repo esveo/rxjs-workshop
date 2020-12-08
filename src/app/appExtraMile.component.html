@@ -1,0 +1,14 @@
+<input [formControl]="inputControl" />
+<p>{{ inputValue$ | async }}</p>
+<ng-container *ngIf="suggestions$ | async as state">
+  <p *ngIf="state.type === 'loading'">Loading!</p>
+  <p *ngIf="state.type === 'error'">Fehler: {{ state.error }}</p>
+  <ul *ngIf="state.type === 'success'">
+    <li *ngFor="let user of state.suggestions">
+      <span>
+        <img width="50px" height="50px" [src]="user.avatar_url" />
+        {{ user.login }}
+      </span>
+    </li>
+  </ul>
+</ng-container>
